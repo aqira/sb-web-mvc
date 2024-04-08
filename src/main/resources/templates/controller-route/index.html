@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Controller route index!</h1>
+<h1>Controller route index!</h1>
+
+<div>
+    <form method="get" th:action="@{detail}">
+        <div>
+            <label for="id">Detail for:</label>
+            <input id="id" name="id" type="number">
+        </div>
+            <button>search detail</button>
+    </form>
+</div>
+
+<hr>
+<div>
+    <form method="post" th:action="@{/controller-route/submit-form}" style="border: 1px solid #000;">
+        <div>
+            <input type="text" id="name" name="name">
+        </div>
+            <button>Submit</button>
+    </form>
+</div>
 </body>
 </html>
